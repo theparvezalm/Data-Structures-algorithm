@@ -1,26 +1,36 @@
 #include<iostream>
 using namespace std;
 class Solution{
-    public:
-    long long factorial(int x){
-        if (x == 0){
-            return 1;
-        }
-        long long fact = 1;
-        for(int i=1;i<=x;i++){
-            fact = fact*i;
+public:
+    static long long int factorial(int x){
+        long long int fact = 1;
+        while (x>0){
+            fact = fact*x;
+            x--;
 
         }
         return fact;
+
+    }
+    static int trailingZeroCount(long long int fact){
+        int count = 0;
+        while(fact % 10 == 0) {
+            count++;
+            fact /= 10;
+        }
+        return count;
+
     }
 
 };
 int main(){
     int x;
-    cout<<"Enter Number:";
+    cout<<"Enter Number for factorial:";
     cin>>x;
-    Solution sol;
-    long long fact = sol.factorial(x);
+    const long long fact = Solution::factorial(x);
     cout<<"Factorial of "<<x<<"!="<<fact<<endl;
-    
+    int count = Solution::trailingZeroCount(fact);
+    cout<<"trailingZeroCount "<<x<<"!="<<count<<endl;
+    return 0;
+
 }
