@@ -24,10 +24,10 @@ public:
         if (x<=1) return false;
         if (x == 2) return true;
         if (x % 2 == 0 || x%3 ==0) return false;
-        int i =2;
+        int i =5;
         while (i*i<x) {
             if (x%i==0) return false;
-            i++;
+            i=i+6;
         }
 
         return true;
