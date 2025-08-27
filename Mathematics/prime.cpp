@@ -26,7 +26,7 @@ public:
         if (x % 2 == 0 || x%3 ==0) return false;
         int i =5;
         while (i*i<x) {
-            if (x%i==0) return false;
+            if (x%i==0 ||x%(i+2)==0) return false;
             i=i+6;
         }
 
