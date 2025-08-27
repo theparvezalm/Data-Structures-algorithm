@@ -17,14 +17,27 @@ class Solution{
     //     }
     //     return 1;
     // }
+    //alternate eucliden algorithm
+    //hcf(a,b)=hcf(a-b,b) //assuming b to be smaller
+    // int getFactor(int x, int y) {
+    //     while (x!=y) {
+    //         if (x>y) {
+    //             x=x-y;
+    //         }else {
+    //             y=y-x;
+    //         }
+    //     }
+    //     return x;
+    //     }
     int getFactor(int x, int y) {
-        while (y != 0) {
-            int temp = y;
-            y = x % y;
-            x = temp;
+        while (x%y!=0) {
+            int temp =y;
+            temp = x%y;
+            y= temp;
         }
-        return x; // x will be the HCF
+        return y;
     }
+    //eucliden algorithm - x*y = gcd(a,b) * lcm(a,b)
     int Lcm(int fact,int x, int y) {
         return (x*y)/fact;
     } 
